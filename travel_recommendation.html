@@ -2,10 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Travel Recommendation</title>
+    <title>Super Travel Recommendations</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        nav { background: rgba(0, 0, 0, 0.8); padding: 15px 30px; display: flex; align-items: center; gap: 20px; }
+        nav a { color: white; text-decoration: none; padding: 8px 15px; }
+        nav a:hover { background: rgba(255, 255, 255, 0.1); border-radius: 5px; }
+        #searchBar { padding: 8px 15px; border: none; border-radius: 5px; width: 250px; }
+        nav button { padding: 8px 20px; border: none; border-radius: 5px; cursor: pointer; background: #007bff; color: white; }
+        nav button:hover { background: #0056b3; }
+        #resetBtn { background: #6c757d; }
+        #resetBtn:hover { background: #545b62; }
+        .hero { background: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600') center/cover; height: 90vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; position: relative; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 20px; }
+        .hero h1 { font-size: 3em; margin-bottom: 20px; }
+        .hero p { font-size: 1.3em; margin-bottom: 30px; }
+        .social-icons { display: flex; gap: 15px; justify-content: center; }
+        .social-icons a { color: white; font-size: 1.5em; transition: transform 0.3s; }
+        .social-icons a:hover { transform: scale(1.2); }
+        body { background: #1a1a1a; }
+        #results { max-width: 1200px; margin: 40px auto; padding: 20px; min-height: 200px; }
+        .result-card { background: rgba(255, 255, 255, 0.95); padding: 20px; margin-bottom: 20px; border-radius: 10px; display: flex; gap: 20px; align-items: center; }
+        .result-card img { width: 200px; height: 150px; object-fit: cover; border-radius: 8px; }
+        .result-card h3 { color: #333; margin-bottom: 10px; }
+        .result-card p { color: #666; line-height: 1.6; }
+    </style>
 </head>
 <body>
-    <h1>Travel</h1>
+    <nav>
+        <a href="travel_recommendation.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <input type="text" id="searchBar" placeholder="Search destinations...">
+        <button id="searchBtn">Search</button>
+        <button id="resetBtn">Reset</button>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Explore breathtaking destinations around the world. From tropical beaches to historic temples, find personalized travel recommendations tailored just for you.</p>
+            <div class="social-icons">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="results"></div>
 
     <script src="./travel_recommendation.js"></script>
 </body>
