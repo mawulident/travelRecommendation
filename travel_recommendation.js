@@ -24,17 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     const results = [];
-    const term = searchTerm.replace(/es$/i, '').replace(/s$/i, '');
+    const term = searchTerm.toLowerCase();
     
-    if (term.includes('beach')) {
+    // Check for beach/beaches
+    if (term === 'beach' || term === 'beaches') {
       results.push(...travelData.beaches);
     }
     
-    if (term.includes('temple')) {
+    // Check for temple/temples
+    if (term === 'temple' || term === 'temples') {
       results.push(...travelData.temples);
     }
     
-    if (term.includes('countr') || term.includes('cit')) {
+    // Check for country/countries/city/cities
+    if (term === 'country' || term === 'countries' || term === 'city' || term === 'cities') {
       travelData.countries.forEach(country => {
         country.cities.forEach(city => results.push(city));
       });
@@ -88,9 +91,7 @@ function getLocalTime(locationName) {
     'Kyoto, Japan': 'Asia/Tokyo',
     'Rio de Janeiro, Brazil': 'America/Sao_Paulo',
     'São Paulo, Brazil': 'America/Sao_Paulo',
-    'Angkor Wat, Cambodia': 'Asia/Phnom_Penh',
     'Taj Mahal, India': 'Asia/Kolkata',
-    'Bora Bora, French Polynesia': 'Pacific/Tahiti',
     'Copacabana Beach, Brazil': 'America/Sao_Paulo'
   };
   
